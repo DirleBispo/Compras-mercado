@@ -31,10 +31,11 @@
       <label class="camera" for="photo">
         <span>📷</span>
         <strong>Tirar foto da etiqueta</strong>
-        <small>A foto ajuda a conferir o produto e o preço</small>
+        <small>O aplicativo tentará reconhecer o produto e o preço</small>
       </label>
       <input id="photo" type="file" accept="image/*" capture="environment" hidden>
       <img id="preview" class="preview hidden" alt="Foto da etiqueta">
+      <p id="ocrStatus" class="privacy" role="status" aria-live="polite"></p>
 
       <div class="grid">
         <div class="wide">
@@ -81,6 +82,7 @@
     <button id="closeDialog" class="primary">Entendi</button>
   </dialog>
 
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5.1.1/dist/tesseract.min.js"></script>
   <script src="app.js" defer></script>
 </body>
 </html>
