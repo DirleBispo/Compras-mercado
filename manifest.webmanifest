@@ -1,0 +1,1 @@
+{"name":"Minhas Compras","short_name":"Compras","description":"Lista inteligente para compras de mercado","start_url":"./","scope":"./","display":"standalone","background_color":"#f3f6f4","theme_color":"#166534","lang":"pt-BR","icons":[{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]}
