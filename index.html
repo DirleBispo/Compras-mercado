@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#166534">
+  <meta name="description" content="Lista inteligente para compras de mercado">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg">
+  <link rel="stylesheet" href="style.css">
+  <title>Minhas Compras</title>
+</head>
+<body>
+  <header>
+    <div>
+      <p class="eyebrow">LISTA INTELIGENTE</p>
+      <h1>Minhas Compras</h1>
+    </div>
+    <button id="installBtn" class="ghost hidden">Instalar</button>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Mercado</h2>
+      <label for="market">Nome do mercado</label>
+      <input id="market" autocomplete="organization" placeholder="Ex.: Mercado Central">
+    </section>
+
+    <section class="card">
+      <h2>Adicionar produto</h2>
+      <label class="camera" for="photo">
+        <span>📷</span>
+        <strong>Tirar foto da etiqueta</strong>
+        <small>A foto ajuda a conferir o produto e o preço</small>
+      </label>
+      <input id="photo" type="file" accept="image/*" capture="environment" hidden>
+      <img id="preview" class="preview hidden" alt="Foto da etiqueta">
+
+      <div class="grid">
+        <div class="wide">
+          <label for="product">Produto</label>
+          <input id="product" placeholder="Ex.: Arroz 5 kg">
+        </div>
+        <div>
+          <label for="price">Preço unitário</label>
+          <input id="price" inputmode="decimal" placeholder="R$ 0,00">
+        </div>
+        <div>
+          <label for="quantity">Quantidade</label>
+          <input id="quantity" type="number" inputmode="numeric" min="1" value="1">
+        </div>
+      </div>
+      <button id="addBtn" class="primary">Adicionar à compra</button>
+      <p id="formError" class="error" role="alert"></p>
+    </section>
+
+    <section class="card">
+      <div class="section-title">
+        <h2>Minha lista</h2>
+        <span id="itemCount">0 itens</span>
+      </div>
+      <div id="empty" class="empty">Nenhum produto adicionado.</div>
+      <div id="items"></div>
+    </section>
+
+    <section class="total-card">
+      <span>Total da compra</span>
+      <strong id="total">R$ 0,00</strong>
+    </section>
+
+    <div class="actions">
+      <button id="finishBtn" class="primary" disabled>Finalizar compra</button>
+      <button id="clearBtn" class="danger" disabled>Limpar lista</button>
+    </div>
+    <p class="privacy">Seus dados ficam salvos neste aparelho.</p>
+  </main>
+
+  <dialog id="finishDialog">
+    <h2>Compra registrada</h2>
+    <p>Esta primeira versão já guarda a compra no aparelho. A próxima etapa enviará o histórico para uma planilha online.</p>
+    <button id="closeDialog" class="primary">Entendi</button>
+  </dialog>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
